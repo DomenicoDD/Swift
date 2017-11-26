@@ -36,9 +36,6 @@ class URLViewController: UIViewController, UIWebViewDelegate {
         let myURLRequest:URLRequest = URLRequest(url: myURL!);
         webView2.loadRequest(myURLRequest);
         
-        
-        
-        
 //        // Do any additional setup after loading the view, typically from a nib.
 //        let url = NSURL (string: "http://www.google.com");
 //        let request = NSURLRequest(URL: url!);

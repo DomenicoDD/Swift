@@ -52,8 +52,6 @@ class ImageViewController: UIViewController, UINavigationControllerDelegate, UII
         self.dismiss(animated: true, completion: nil)
     }
     
-    
-    
     func image(_ image: UIImage, didFinishSavingWithError error: NSErrorPointer?, contextInfo: UnsafeRawPointer){
         if(error != nil){
             print("ERROR IMAGE \(error.debugDescription)")
