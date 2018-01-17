@@ -35,14 +35,14 @@ class ViewController: UIViewController, EKEventEditViewDelegate {
         //get start and end date
         var aDayBeforeComponents = DateComponents()
         aDayBeforeComponents.day = -1
-        let aDayBefore : Date = (calendar as NSCalendar).date(byAdding: aDayBeforeComponents, to: Date(), options: Calendar(identifier: 0))!
+        let aDayBefore : Date = (calendar as NSCalendar).date(byAdding: aDayBeforeComponents, to: Date(), options: NSCalendar.Options(rawValue: 0))!
         var yearAfterComponents = DateComponents()
         yearAfterComponents.year = 1
-        let yearAfter : Date = (calendar as NSCalendar).date(byAdding: yearAfterComponents, to: Date(), options: Calendar(identifier: 0))!
+        let yearAfter : Date = (calendar as NSCalendar).date(byAdding: yearAfterComponents, to: Date(), options: NSCalendar.Options(rawValue: 0))!
         //create predicate
         let predicate : NSPredicate = self.store.predicateForEvents(withStart: aDayBefore, end: yearAfter, calendars: nil)
         //get related events
-        let events : NSArray = self.store.events(matching: predicate)
+        let events : NSArray = self.store.events(matching: predicate) as NSArray
         
         //loop all events in events and delete it
         for i in events{
@@ -61,14 +61,14 @@ class ViewController: UIViewController, EKEventEditViewDelegate {
         //get start and end date
         var aDayBeforeComponents = DateComponents()
         aDayBeforeComponents.day = -1
-        let aDayBefore : Date = (calendar as NSCalendar).date(byAdding: aDayBeforeComponents, to: Date(), options: Calendar(identifier: 0))!
+        let aDayBefore : Date = (calendar as NSCalendar).date(byAdding: aDayBeforeComponents, to: Date(), options: NSCalendar.Options(rawValue: 0))!
         var yearAfterComponents = DateComponents()
         yearAfterComponents.year = 1
-        let yearAfter : Date = (calendar as NSCalendar).date(byAdding: yearAfterComponents, to: Date(), options: Calendar(identifier: 0))!
+        let yearAfter : Date = (calendar as NSCalendar).date(byAdding: yearAfterComponents, to: Date(), options: NSCalendar.Options(rawValue: 0))!
         //create predicate
         let predicate : NSPredicate = self.store.predicateForEvents(withStart: aDayBefore, end: yearAfter, calendars: nil)
         //get related events
-        let events : NSArray = self.store.events(matching: predicate)
+        let events : NSArray = self.store.events(matching: predicate) as NSArray
         
         //loop all events in events and add alarm to all
         for i in events{
